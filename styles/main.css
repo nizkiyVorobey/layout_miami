@@ -27,7 +27,6 @@ a {
   list-style: none; }
 
 body {
-  background-color: #f2f2f2;
   color: #3e3e3e; }
 
 .blue {
@@ -56,7 +55,6 @@ body {
   margin-top: 152px;
   margin-bottom: 93px; }
   .h1__title::after {
-    /* Изменить потом цвет*/
     content: "";
     display: block;
     position: absolute;
@@ -100,7 +98,6 @@ body {
   margin-top: 152px;
   margin-bottom: 93px; }
   .h1__title::after {
-    /* Изменить потом цвет*/
     content: "";
     display: block;
     position: absolute;
@@ -204,7 +201,7 @@ body {
 .nav__item:hover a {
   color: #9fadc2; }
 
-.nav--active {
+.nav__item--active {
   background: rgba(255, 255, 255, 0.1); }
 
 .aboutUs {
@@ -270,9 +267,9 @@ body {
     -o-object-fit: cover;
        object-fit: cover;
     height: 256px; }
-  .row__block-description {
+  .row__description {
     margin-top: 24px; }
-  .row__block-description-link {
+  .row__description-link {
     font-weight: bold; }
 
 .consultation__block {
@@ -306,7 +303,12 @@ body {
   border-radius: 8px;
   outline: none;
   padding-left: 17px;
-  font-size: 14px; }
+  font-size: 14px;
+  margin-bottom: 16px; }
+
+.consultation__form-input:focus {
+  -webkit-box-shadow: 0 1px 12px rgba(0, 117, 255, 0.46);
+          box-shadow: 0 1px 12px rgba(0, 117, 255, 0.46); }
 
 .consultation__form-button {
   width: 100%;
@@ -314,8 +316,14 @@ body {
   background: #0075ff;
   -webkit-box-shadow: 0 6px 23px rgba(0, 117, 255, 0.46);
           box-shadow: 0 6px 23px rgba(0, 117, 255, 0.46);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border-radius: 8px;
-  margin-top: 32px; }
+  margin-top: 32px;
+  border: 2px solid transparent; }
+  .consultation__form-button:hover {
+    border: 2px solid #0075ff;
+    background-color: rgba(248, 248, 255, 0.2); }
 
 .consultation__form-link {
   font-weight: bold;
@@ -323,18 +331,21 @@ body {
   text-align: center;
   line-height: 56px;
   color: #fff; }
+  .consultation__form-link:hover {
+    color: #0075ff; }
 
 .testimonials__row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 280px);
-  justify-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  grid-row-gap: 50px; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
 
 .card {
   display: -webkit-box;
@@ -347,7 +358,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 240px; }
+  width: 240px;
+  margin: 0 15px; }
   .card__avatar {
     width: 153px;
     height: 153px;
@@ -362,13 +374,21 @@ body {
   .card__feedback {
     text-align: center; }
 
-.contactUs__information {
-  display: grid;
-  grid-gap: 50px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  grid-template-columns: auto auto repeat(1, minmax(250px, 1fr)); }
+.contactUs__area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.contactUs__ourInforation, .contactUs__adressInforation, .contactUs__formInforation {
+  margin: 0 15px; }
 
 .contactUs__address {
   max-width: 152px; }
@@ -395,6 +415,12 @@ body {
           box-sizing: border-box;
   margin-top: 88px;
   padding-bottom: 40px; }
+
+@media screen and (max-width: 900px) {
+  .testimonials__row {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly; } }
 
 @media screen and (max-width: 740px) {
   .nav__list {
@@ -514,7 +540,8 @@ body {
             transform: rotate(45deg) translate(-8px, -8px); }
   .aboutUs__title {
     font-size: 36px;
-    margin-bottom: 48px; }
+    margin-bottom: 48px;
+    width: auto; }
   .consultation__block {
     display: block;
     margin-top: 0; }
@@ -527,18 +554,5 @@ body {
     margin-top: 24px; }
   .contactUs__formInforation {
     margin-top: 32px; } }
-
-body {
-  background-color: #f2f2f2;
-  color: #3e3e3e; }
-
-.blue {
-  color: #0075ff; }
-
-.black {
-  color: black; }
-
-.display-none {
-  display: none; }
 
 /*# sourceMappingURL=main.css.map */
