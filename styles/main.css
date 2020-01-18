@@ -767,4 +767,7 @@ body {
   .contactUs__formInforation {
     margin-top: 32px; } }
 
+html {
+  scroll-behavior: smooth; }
+
 /*# sourceMappingURL=main.css.map */
